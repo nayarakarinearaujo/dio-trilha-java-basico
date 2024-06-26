@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ContaBancaria {
+public class ContaTerminal  {
     public static void main(String[] args) {
 
 //Atributo	Tipo	Exemplo
@@ -19,22 +19,29 @@ Depois de todas as informações terem sido inseridas, o sistema deverá exibir 
 
         Scanner scanner = new Scanner(System.in);
 
-
+        // Solicitando e lendo o número da conta
         System.out.println("Por favor, digite o número da conta: ");
-        int numeroConta= scanner.nextInt();
+        int numeroConta = scanner.nextInt();
 
+        // Consumir a nova linha restante
         scanner.nextLine();
 
+        // Solicitando e lendo o número da agência
         System.out.println("Por favor, digite o número da Agência: ");
         String agencia = scanner.nextLine();
 
+        // Solicitando e lendo o nome do cliente
         System.out.println("Por favor digite o nome e sobrenome: ");
         String nome = scanner.nextLine();
 
+        // Solicitando e lendo o saldo
         System.out.println("Por favor digite o saldo: ");
-        Double saldoConta = scanner.nextDouble();
+        double saldoConta = scanner.nextDouble();
 
-        System.out.println("Olá " + nome + ", obrigado por criar uma conta em nosso banco, sua agência é " + agencia + ", conta " + numeroConta + " e seu saldo R$ " + saldoConta + " já está disponível para saque!");
+        // Formatando o saldo para duas casas decimais
+        String saldoFormatado = String.format("%.2f", saldoConta);
+
+        System.out.println("Olá " + nome + ", obrigado por criar uma conta em nosso banco, sua agência é " + agencia + ", conta " + numeroConta + " e seu saldo R$ " + saldoFormatado + " já está disponível para saque!");
 
 
     }
